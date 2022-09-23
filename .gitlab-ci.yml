@@ -5,7 +5,7 @@ containerize:
   image: docker
   services:
     - name: docker:dind
-  stage: docker
+  stage: containerize
   before_script:
     - mkdir -p $HOME/.docker
     - cp $DOCKER_CONFIG_JSON $HOME/.docker/config.json
