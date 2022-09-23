@@ -1,0 +1,11 @@
+{
+  "name": "client-logging",
+  "version": "1.2.1",
+  "description": "NodeJS Logging Service to log client side errors in stdout of the server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

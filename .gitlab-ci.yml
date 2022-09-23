@@ -1,0 +1,17 @@
+stages:
+  - containerize
+
+containerize:
+  image: docker
+  services:
+    - name: docker:dind
+  stage: docker
+  before_script:
+    - mkdir -p $HOME/.docker
+    - cp $DOCKER_CONFIG_JSON $HOME/.docker/config.json
+  script:
+    - docker build --tag niggoo/client-logger:$CI_COMMIT_SHA --tag niggoo/client-logger:latest .
+    - docker push niggoo/client-logger:$CI_COMMIT_SHA
+    - docker push niggoo/client-logger:latest
+  only:
+    - master
